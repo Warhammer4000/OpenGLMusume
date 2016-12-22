@@ -18,6 +18,45 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BomberMan.cpp" />
+    <ClCompile Include="Fan.cpp" />
+    <ClCompile Include="Floor.cpp" />
+    <ClCompile Include="imageloader.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="SolarSystem.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TexturedCube.cpp" />
+    <ClCompile Include="TexturedSphere.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BomberMan.h" />
+    <ClInclude Include="Fan.h" />
+    <ClInclude Include="Floor.h" />
+    <ClInclude Include="GlobalConstants.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="imageloader.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="SolarSystem.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TexturedCube.h" />
+    <ClInclude Include="TexturedSphere.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="earth.bmp" />
+    <Image Include="floor.bmp" />
+    <Image Include="innerWall.bmp" />
+    <Image Include="jupiter.bmp" />
+    <Image Include="mars.bmp" />
+    <Image Include="mercury.bmp" />
+    <Image Include="moon.bmp" />
+    <Image Include="roof.bmp" />
+    <Image Include="saturn.bmp" />
+    <Image Include="sun.bmp" />
+    <Image Include="venus.bmp" />
+    <Image Include="Wall.bmp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{66C91958-555C-43FA-855B-444904568EAA}</ProjectGuid>
     <RootNamespace>Musume</RootNamespace>
@@ -109,8 +148,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
