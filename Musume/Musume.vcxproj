@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BatmanLogoFrame.cpp" />
     <ClCompile Include="BomberMan.cpp" />
     <ClCompile Include="Fan.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="imageloader.cpp" />
     <ClCompile Include="Light.cpp" />
+    <ClCompile Include="SimplePortrait.cpp" />
     <ClCompile Include="SolarSystem.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -31,6 +33,7 @@
     <ClCompile Include="TexturedSphere.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BatmanLogoFrame.h" />
     <ClInclude Include="BomberMan.h" />
     <ClInclude Include="Fan.h" />
     <ClInclude Include="Floor.h" />
@@ -38,6 +41,7 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="imageloader.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="SimplePortrait.h" />
     <ClInclude Include="SolarSystem.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturedCube.h" />

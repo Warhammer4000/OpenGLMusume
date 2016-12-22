@@ -6,6 +6,8 @@
 #include "SolarSystem.h"
 #include "BomberMan.h"
 #include "Fan.h"
+#include "SimplePortrait.h"
+#include "BatmanLogoFrame.h"
 Floor::Floor()
 {
 
@@ -598,8 +600,66 @@ void drawFloor(){
 			DisableLight();
 		glPopMatrix();
 
+		//SolidTeapot
+		glPushMatrix();
+		glTranslatef(lentgh/2-10, 1, -1);
+			glPushMatrix();
+			//Base
+				glTranslatef(0, -1, 0);
+				glScalef(1, 8, 1);
+				EnableLight();
+				SetDiffuse(0.8, 0.8, 0.8);
+				glutSolidCube(1);
+				DisableLight();
+			glPopMatrix();
+
+			glRotatef(rotationAngle, 0, 1, 0);
+
+			
+			glTranslatef(0,4,0);
+			//SetDiffuse(0.5, 0.5, 0.5);
+			glutSolidTeapot(1);
+			DisableLight();
 
 
+		glPopMatrix();
+
+
+		//WireTeapot
+		glPushMatrix();
+			glTranslatef(lentgh / 2 - 10, 1, -15);
+			glPushMatrix();
+			//Base
+				glTranslatef(0, -1, 0);
+				glScalef(1, 8, 1);
+				EnableLight();
+				SetDiffuse(1,1,1);
+				glutSolidCube(1);
+				DisableLight();
+			glPopMatrix();
+
+			glRotatef(rotationAngle, 0, 1, 0);
+
+
+			glTranslatef(0, 4, 0);
+			SetDiffuse(0.5, 0.5, 0.5);
+			glutWireTeapot(1);
+			DisableLight();
+
+
+		glPopMatrix();
+
+		//portrait
+		glPushMatrix();
+			glTranslatef(-9,5,width/2-7);
+			SimplePortrait* sp = new SimplePortrait();
+		glPopMatrix();
+
+		//batman
+		glPushMatrix();
+		glTranslatef(-25, 5, width / 2 - 7);
+			BatmanLogoFrame* bf = new BatmanLogoFrame();
+		glPopMatrix();
 
 
 	glPopMatrix();//main end
