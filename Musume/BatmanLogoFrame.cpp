@@ -10,7 +10,7 @@ BatmanLogoFrame::BatmanLogoFrame()
 		glPushMatrix();
 		glTranslatef(0,3,0);
 			glScalef(10, 6, 0.1);
-			glColor3f(1, 1, 1);
+			glColor3f(0, 0, 0);
 			glutSolidCube(1);
 
 			glTranslatef(0, 0, -0.3);
@@ -50,7 +50,7 @@ BatmanLogoFrame::BatmanLogoFrame()
 		glTranslatef(-3.5, 2, -0.1);
 		glScalef(0.25,0.25,1);
 		//drawBatman Logo
-		glColor3f(0, 0, 0);
+		glColor3f(0.8, 0.8, 0.8);
 		glBegin(GL_QUADS);
 		int x1, x2, x3, x4;
 		int y1, y2, y3, y4;

@@ -8,6 +8,12 @@
 #include "Fan.h"
 #include "SimplePortrait.h"
 #include "BatmanLogoFrame.h"
+#include "FlashPortrait.h"
+#include "HumanModel.h"
+#include "Tank.h"
+#include "CristmasTree.h"
+#include "AIUBCampus.h"
+#include "BeizerCurvePortrait.h"
 Floor::Floor()
 {
 
@@ -230,8 +236,11 @@ void drawFloor(){
 		//BomberMan
 		glPushMatrix();
 			glScalef(4,4,4);
+			
+			SetLightPosition(-1, 10, 1);
 			glTranslatef(lentgh / 25, 1, lentgh/25);
 			drawBomberMan();
+		
 		glPopMatrix();
 
 		//solarSystem
@@ -241,8 +250,45 @@ void drawFloor(){
 			drawSolarSystem();
 		glPopMatrix();
 
+
+		//humanoid
+		glPushMatrix();
+		glScalef(3, 3, 3);
+		glTranslatef(lentgh / 18, 1, -lentgh / 14);
+	
+		HumanModel* HM = new HumanModel();
+		glPopMatrix();
+
+		//Tank
+		glPushMatrix();
+		glTranslatef(-lentgh / 5 - 5,4, lentgh / 5 - 5);
+		glScalef(4,4,4);
+		Tank* tank = new Tank();
+		glPopMatrix();
+
+
+		//Tree
+		glPushMatrix();
+		glTranslatef(-5,3,-5);
+		glScalef(12,12,12);
+		CristmasTree* t1 = new CristmasTree();
+		glPopMatrix();
+
+		DisableLight();
+		//AIUBCampus
+		glPushMatrix();
+		glTranslatef(-lentgh / 2 + 12, 1, -10);
+		glRotatef(-90,0,1,0);
+		glScalef(3,3,3);
+		
+		AIUBCampus* AIUB = new AIUBCampus();
+		glPopMatrix();
+
+
+		EnableLight();
 //Basic Models
 		//SolidCube
+		//SetLightPosition(1, 1,1);
 		glPushMatrix();
 		glScalef(3,3,3);
 		glTranslatef(lentgh/14, 1, 1);
@@ -600,24 +646,25 @@ void drawFloor(){
 			DisableLight();
 		glPopMatrix();
 
+		SetLightPosition(-1, 10, 1);
 		//SolidTeapot
 		glPushMatrix();
-		glTranslatef(lentgh/2-10, 1, -1);
+			glTranslatef(lentgh / 2 - 10, 1,8);
 			glPushMatrix();
 			//Base
-				glTranslatef(0, -1, 0);
-				glScalef(1, 8, 1);
-				EnableLight();
-				SetDiffuse(0.8, 0.8, 0.8);
-				glutSolidCube(1);
-				DisableLight();
+			glTranslatef(0, -1, 0);
+			glScalef(1, 8, 1);
+			EnableLight();
+			SetDiffuse(0.8, 0.8, 0.8);
+			glutSolidCube(1);
+			DisableLight();
 			glPopMatrix();
 
 			glRotatef(rotationAngle, 0, 1, 0);
 
-			
-			glTranslatef(0,4,0);
-			//SetDiffuse(0.5, 0.5, 0.5);
+			EnableLight();
+			glTranslatef(0, 4, 0);
+			SetDiffuse(0.9, 0.9, 0.9);
 			glutSolidTeapot(1);
 			DisableLight();
 
@@ -633,23 +680,23 @@ void drawFloor(){
 				glTranslatef(0, -1, 0);
 				glScalef(1, 8, 1);
 				EnableLight();
-				SetDiffuse(1,1,1);
+				SetDiffuse(0.8, 0.8, 0.8);
 				glutSolidCube(1);
 				DisableLight();
 			glPopMatrix();
 
 			glRotatef(rotationAngle, 0, 1, 0);
 
-
+			EnableLight();
 			glTranslatef(0, 4, 0);
-			SetDiffuse(0.5, 0.5, 0.5);
+			SetDiffuse(0.9, 0.9, 0.9);
 			glutWireTeapot(1);
 			DisableLight();
 
 
 		glPopMatrix();
 
-		//portrait
+	//portrait
 		glPushMatrix();
 			glTranslatef(-9,5,width/2-7);
 			SimplePortrait* sp = new SimplePortrait();
@@ -660,6 +707,22 @@ void drawFloor(){
 		glTranslatef(-25, 5, width / 2 - 7);
 			BatmanLogoFrame* bf = new BatmanLogoFrame();
 		glPopMatrix();
+
+
+		//flash
+		glPushMatrix();
+
+		glTranslatef(8, 3, width / 2 - 7);
+		FlashPortrait* FP = new FlashPortrait();
+		glPopMatrix();
+
+		glPushMatrix();
+	
+		glTranslatef(-9, 5, -width / 2 +7);
+		glRotatef(180, 0, 1, 0);
+		BeizerCurvePortrait* BCP = new BeizerCurvePortrait();
+		glPopMatrix();
+	
 
 
 	glPopMatrix();//main end

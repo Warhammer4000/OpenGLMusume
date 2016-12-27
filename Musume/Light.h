@@ -5,6 +5,7 @@ class Light
 public:
 	Light();
 	~Light();
+	
 };
 
 void SetLightPosition(GLfloat x, GLfloat y, GLfloat z);
@@ -15,3 +16,4 @@ void SetShininess(GLfloat x);
 void SetEmision(GLfloat x, GLfloat y, GLfloat z);
 void EnableLight();
 void DisableLight();
+void LightReset();

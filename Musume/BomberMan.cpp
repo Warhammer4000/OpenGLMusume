@@ -23,8 +23,8 @@ void drawBomberMan() {
 			glScalef(1,0.2,1);
 			EnableLight();
 			SetDiffuse(0.8, 0.8, 0.8);
-			SetSpecuilar(1, 1, 1);
-			SetEmision(0.3, 0.3, 0.3);
+			
+	
 			glutSolidCube(1);
 			DisableLight();
      glPopMatrix();
@@ -38,6 +38,7 @@ void drawBomberMan() {
 
 		EnableLight();
 		SetDiffuse(0,0,1);
+		SetSpecuilar(1, 1, 1);
 		SetAmbient(0.2, 0.2, 0.2);
 		SetEmision(0.1, 0.1, 0.1);
 		SetShininess(70);
