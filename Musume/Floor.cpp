@@ -277,9 +277,9 @@ void drawFloor(){
 		DisableLight();
 		//AIUBCampus
 		glPushMatrix();
-		glTranslatef(-lentgh / 2 + 12, 1, -10);
+		glTranslatef(-lentgh / 2 + 12, 2, -10);
 		glRotatef(-90,0,1,0);
-		glScalef(3,3,3);
+		glScalef(2,2,2);
 		
 		AIUBCampus* AIUB = new AIUBCampus();
 		glPopMatrix();
